@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="joke"></h1>
+    <button id="jokeBtn">Show Random Joke</button>
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything.",
+            "Why did the math book look sad? Because it had too many problems.",
+            "What do you call fake spaghetti? An impasta.",
+            "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+            "Why couldn’t the bicycle stand up by itself? It was two-tired!"
+        ];
+
+        const jokeElement = document.getElementById('joke');
+        const jokeBtn = document.getElementById('jokeBtn');
+
+        function showRandomJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            jokeElement.textContent = jokes[randomIndex];
+        }
+
+        jokeBtn.addEventListener('click', showRandomJoke);
+
+        // Show one joke on page load
+        showRandomJoke();
+    </script>
+</body>
+</html>
